@@ -25,17 +25,17 @@ public class LoginWithFacebook implements Task {
     public <T extends Actor> void performAs(T actor) {
 
         actor.attemptsTo(
-                Click.on(n11HomePageElements.LOGIN_LINK),
-                WaitUntil.the(n11LoginPageElements.FB_LOGIN,isClickable()).forNoMoreThan(2).seconds(),
-                Click.on(n11LoginPageElements.FB_LOGIN),
-                Switch.toNewWindow(),
-                Click.on(FBLoginElements.EMAIL_FIELD),
-                SendKeys.of(this.email_text).into(FBLoginElements.EMAIL_FIELD),
-                Click.on(FBLoginElements.PASSWORD_FIELD),
-                SendKeys.of(this.password_text).into(FBLoginElements.PASSWORD_FIELD),
-                WaitUntil.the(FBLoginElements.LOGIN_BUTTON,isClickable()).forNoMoreThan(3).seconds(),
-                Click.on(FBLoginElements.LOGIN_BUTTON),
-                Switch.toNewWindow()
+                Click.on(n11HomePageElements.LOGIN_LINK), // Click "Giriş Yap" on HomePage
+                WaitUntil.the(n11LoginPageElements.FB_LOGIN,isClickable()).forNoMoreThan(2).seconds(), //Wait for facebook login button to be clickable
+                Click.on(n11LoginPageElements.FB_LOGIN), // Click Facebook login button
+                Switch.toNewWindow(), //Switch facebook login window
+                Click.on(FBLoginElements.EMAIL_FIELD), // Click "E-posta" field
+                SendKeys.of(this.email_text).into(FBLoginElements.EMAIL_FIELD), // Send "email_text" to "E-posta" field
+                Click.on(FBLoginElements.PASSWORD_FIELD), // Click "Şifre" field
+                SendKeys.of(this.password_text).into(FBLoginElements.PASSWORD_FIELD), // Sende "password_text" to "Şifre" field
+                WaitUntil.the(FBLoginElements.LOGIN_BUTTON,isClickable()).forNoMoreThan(3).seconds(), // Wait for login button to be clickable
+                Click.on(FBLoginElements.LOGIN_BUTTON), // Click "Giriş Yap" button
+                Switch.toNewWindow() // Switch n11 homePage
                // WaitUntil.the(FBLoginElements.CONTINUE_BUTTON,isClickable()).forNoMoreThan(3).seconds(),
                 //Click.on(FBLoginElements.CONTINUE_BUTTON)
 

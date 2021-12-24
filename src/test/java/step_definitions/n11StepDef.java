@@ -39,6 +39,7 @@ public class n11StepDef {
     public void userLoggedInWithFacebook() {
         actor.attemptsTo(
                 LoginWithFacebook.loginFacebook("lespazalte@vusra.com","user1234")
+                //Call method loginFacebook from LoginWithFacebook class and send parameters to "email_text" and "password_text"
         );
 
     }
@@ -49,6 +50,7 @@ public class n11StepDef {
                     Ensure.that(n11HomePageElements.USERNAME_TEXT)
                             .text()
                             .isEqualTo("Lespazalte Lespazalte")
+                    //Checks the equality of expected text and actual text
             );
     }
 }
